@@ -39,23 +39,21 @@ function App() {
     i18n.changeLanguage(newLang);
   };
 
-  // Referência para o formulário
   const form = useRef<HTMLFormElement>(null);
 
-  // Função que dispara o email
   const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault(); // Evita que a página recarregue
+    e.preventDefault(); 
 
     if (form.current) {
       emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,   // Puxa o Service ID do .env
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,  // Puxa o Template ID do .env
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,   
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,  
         form.current, 
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY    // Puxa a Public Key do .env
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY    
       )
       .then(() => {
           alert(i18n.language === 'pt' ? 'Mensagem enviada com sucesso! 🚀' : 'Message sent successfully! 🚀');
-          form.current?.reset(); // Limpa os campos após enviar
+          form.current?.reset(); 
       }, (error) => {
           console.error(error.text);
           alert(i18n.language === 'pt' ? 'Erro ao enviar. Tente novamente.' : 'Error sending message. Try again.');
@@ -95,25 +93,24 @@ function App() {
         </div>
       </header>
 
-      {/* SESSÃO HERO & SOBRE MIM - Ajustada para esticar os elementos */}
+      {/* SESSÃO HERO & SOBRE MIM */}
       <main className="container mx-auto px-6 py-20">
         <section id="about" className="flex flex-col md:flex-row items-stretch gap-16">
           
-{/* ENQUADRAMENTO DE FOTO PREMIUM E INTEGRADO */}
+{/* ENQUADRAMENTO DE FOTO */}
 <div className="w-full md:w-1/2 flex justify-center relative items-center py-10">
             
             {/* --- ANÉIS ORBITAIS ANIMADOS --- */}
-            {/* Este container centraliza os anéis atrás da sua foto */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square flex items-center justify-center pointer-events-none z-0">
               
-              {/* Anel Tracejado (Gira no sentido horário) */}
+              {/* Anel Tracejado */}
               <motion.div 
                 animate={{ rotate: 360 }}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                 className="absolute w-full max-w-[480px] aspect-square border border-primary-500/40 rounded-full border-dashed"
               />
               
-              {/* Anel Sólido Externo (Gira no sentido anti-horário mais devagar) */}
+              {/* Anel Sólido Externo  */}
               <motion.div 
                 animate={{ rotate: -360 }}
                 transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
@@ -121,7 +118,7 @@ function App() {
               />
             </div>
 
-            {/* O "Frame" do Enquadramento (Agora com z-10 para ficar por cima dos anéis) */}
+            {/* O "Frame" do Enquadramento */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -161,7 +158,6 @@ function App() {
               {t('hero_subtitle')}
             </h2>
             
-            {/* AQUI ESTÁ O SEGREDO DO CSS (whitespace-pre-line) PARA AS CRASES FUNCIONAREM */}
             <p className="text-lg text-gray-400 leading-relaxed whitespace-pre-line">
               {t('about_text')}
             </p>
@@ -224,7 +220,7 @@ function App() {
             <div className="h-1 w-24 bg-primary-600 rounded-full" />
           </h3>
           
-          {/* Grid de Tecnologias Premium */}
+          {/* Grid de Tecnologias */}
           <div className="flex flex-wrap gap-4">
             {['C#', '.NET 8', 'React', 'TypeScript', 'PostgreSQL', 'MongoDB', 'Python', 'Firebase', 'Tailwind CSS'].map(tech => (
               <motion.div 
@@ -260,21 +256,21 @@ function App() {
           <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-6">
               <input 
                 type="text" 
-                name="user_name" // <-- IMPORTANTE: tem que ter o name
+                name="user_name" 
                 required
                 placeholder={i18n.language === 'pt' ? 'Seu Nome' : 'Your Name'} 
                 className="bg-black/50 border border-gray-800 rounded-xl px-5 py-4 text-gray-100 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all" 
               />
               <input 
                 type="email" 
-                name="user_email" // <-- IMPORTANTE
+                name="user_email" 
                 required
                 placeholder={i18n.language === 'pt' ? 'Seu E-mail' : 'Your Email'} 
                 className="bg-black/50 border border-gray-800 rounded-xl px-5 py-4 text-gray-100 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all" 
               />
               <textarea 
                 rows={5} 
-                name="message" // <-- IMPORTANTE
+                name="message"
                 required
                 placeholder={i18n.language === 'pt' ? 'Sua Mensagem' : 'Your Message'} 
                 className="bg-black/50 border border-gray-800 rounded-xl px-5 py-4 text-gray-100 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none" 

@@ -21,15 +21,14 @@
 }
 
 ::-webkit-scrollbar {
-    width: 8px; /* Fina e elegante */
+    width: 8px; 
   }
   
   ::-webkit-scrollbar-track {
-    background: #0a0a0a; /* Fundo invisível/mesclado com o site */
+    background: #0a0a0a; 
   }
   
   ::-webkit-scrollbar-thumb {
-    /* A mágica: ela usa a variável de cor! Muda para azul, vermelho ou roxo com o tema */
     background-color: var(--color-primary-600); 
     border-radius: 10px;
   }
