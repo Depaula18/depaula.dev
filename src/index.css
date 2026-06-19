@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root, .theme-blue {
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+}
+
+.theme-red {
+  --color-primary-400: #f87171;
+  --color-primary-500: #ef4444;
+  --color-primary-600: #dc2626;
+}
+
+.theme-purple {
+  --color-primary-400: #c084fc;
+  --color-primary-500: #a855f7;
+  --color-primary-600: #9333ea;
+}
+
+::-webkit-scrollbar {
+    width: 8px; /* Fina e elegante */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a; /* Fundo invisível/mesclado com o site */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    /* A mágica: ela usa a variável de cor! Muda para azul, vermelho ou roxo com o tema */
+    background-color: var(--color-primary-600); 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primary-500);
+  }
