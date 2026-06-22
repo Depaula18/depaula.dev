@@ -135,7 +135,7 @@ function App() {
 
               {/* A Foto */}
               <motion.img
-                src="/perfil.png"
+                src="/perfil.jpeg"
                 alt="Murilo De Paula"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
