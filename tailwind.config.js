@@ -11,7 +11,9 @@ export default {
           400: 'var(--color-primary-400)',
           500: 'var(--color-primary-500)',
           600: 'var(--color-primary-600)',
-        }
+        },
+        void: '#0a0a0a',
+        'accent-blue': 'var(--color-primary-500)',
       }
     },
   },

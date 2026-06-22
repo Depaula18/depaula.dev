@@ -5,6 +5,7 @@ import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { db } from './firebase';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import PhotoFrame from './components/PhotoFrame';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -95,62 +96,19 @@ function App() {
 
       {/* SESSÃO HERO & SOBRE MIM */}
       <main className="container mx-auto px-6 py-20">
-        <section id="about" className="flex flex-col md:flex-row items-stretch gap-16">
+      <section id="about" className="flex flex-col xl:flex-row items-center gap-16">
           
-{/* ENQUADRAMENTO DE FOTO */}
-<div className="w-full md:w-1/2 flex justify-center relative items-center py-10">
-            
-            {/* --- ANÉIS ORBITAIS ANIMADOS --- */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square flex items-center justify-center pointer-events-none z-0">
-              
-              {/* Anel Tracejado */}
-              <motion.div 
-                animate={{ rotate: 360 }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="absolute w-full max-w-[480px] aspect-square border border-primary-500/40 rounded-full border-dashed"
-              />
-              
-              {/* Anel Sólido Externo  */}
-              <motion.div 
-                animate={{ rotate: -360 }}
-                transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-                className="absolute w-[115%] max-w-[550px] aspect-square border border-primary-500/10 rounded-full"
-              />
-            </div>
-
-            {/* O "Frame" do Enquadramento */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative z-10 w-full max-w-[450px] h-full min-h-[500px] rounded-3xl overflow-hidden bg-[#111111]/80 backdrop-blur-sm border border-gray-800 shadow-xl"
-            >
-              
-              {/* Efeito de brilho INTERNO */}
-              <motion.div 
-                animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.4, 0.3] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary-600 rounded-full blur-[120px] pointer-events-none"
-              />
-
-              {/* A Foto */}
-              <motion.img
-                src="/perfil.jpeg"
-                alt="Murilo De Paula"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="absolute -bottom-10 right-0 h-[110%] w-auto object-contain z-10 [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]"
-              />
-
-              {/* Gradiente de Fusão */}
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#111111] to-transparent z-20" />
-
-            </motion.div>
+          {/* ENQUADRAMENTO DE FOTO PREMIUM */}
+          <div className="w-full xl:w-1/2 flex justify-center relative items-center py-16">
+            <PhotoFrame 
+              src="/perfil.jpeg" 
+              name={t('hero_title')} 
+              role={t('hero_subtitle')}
+            />
           </div>
 
           {/* TEXTO SOBRE MIM */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full xl:w-1/2">
             <h1 className="text-5xl font-extrabold mb-2 text-white">
               {t('hero_title')}
             </h1>
