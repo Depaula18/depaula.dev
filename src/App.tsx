@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { motion, useScroll, useTransform } from 'framer-motion'; 
+import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { db } from './firebase';

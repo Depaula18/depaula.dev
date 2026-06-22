@@ -5,7 +5,6 @@ import {
   useScroll,
   useTransform,
   useSpring,
-  type Variants,
 } from "framer-motion";
 import { useTranslation } from 'react-i18next';
 
