@@ -171,22 +171,6 @@ export function HeroSection({
           {tagline}
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-white/40">
-            Scroll
-          </span>
-          <motion.div
-            className="h-8 w-px bg-gradient-to-b from-accent-blue/80 to-transparent"
-            animate={reduce ? undefined : { scaleY: [0.4, 1, 0.4], opacity: [0.4, 1, 0.4] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            style={{ transformOrigin: "top" }}
-          />
-        </motion.div>
       </div>
     </section>
   );

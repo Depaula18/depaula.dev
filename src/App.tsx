@@ -68,7 +68,7 @@ function App() {
       {/* NAVBAR MINIMALISTA */}
       <header className="flex justify-between items-center p-6 border-b border-gray-800">
         <div className="text-xl font-bold tracking-wider text-primary-500">
-          depaula<span className="text-gray-100">.dev</span>
+          depaula<span className="text-gray-100">.tec.br</span>
         </div>
         
         <nav className="hidden md:flex gap-8 font-medium text-gray-400">
@@ -95,9 +95,6 @@ function App() {
 
       <main className="w-full relative bg-[#0a0a0a]">
         
-        {/* ==========================================
-            SESSÃO 1: A NARRATIVA (HERO + SOBRE MIM)
-            ========================================== */}
         <div className="relative w-full">
           <div className="sticky top-0 w-full h-screen z-10 overflow-hidden">
             <HeroSection 
