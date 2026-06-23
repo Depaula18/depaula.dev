@@ -31,10 +31,10 @@ Este portfólio foi desenvolvido para refletir minha identidade como Desenvolved
 Caso queira clonar o repositório para testar a arquitetura na sua máquina:
 
 1. Clone o repositório:
-`git clone https://github.com/Depaula18/SEU-REPOSITORIO.git`
+`git clone https://github.com/Depaula18/depaula.dev`
 
 2. Entre na pasta do projeto:
-`cd SEU-REPOSITORIO`
+`cd depaula.dev`
 
 3. Instale as dependências:
 `npm install`
