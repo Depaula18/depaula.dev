@@ -8,7 +8,7 @@
 
 > O repositório oficial do meu portfólio web, focado em alta performance, internacionalização (i18n) e design de interface avançado (UI/UX).
 
-🔗 **Acesse ao vivo:** [depaula-dev.vercel.app](https://depaula-dev.vercel.app/)
+🔗 **Acesse ao vivo:** [depaula.tec.br](https://depaula.tec.br/)
 
 ---
 
